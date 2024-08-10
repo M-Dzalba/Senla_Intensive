@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<databaseChangeLog
+   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro 
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd"
+      logicalFilePath="changelogs">  
+    
+    <changeSet id="homework-2-hr-dept" author="Max Dzalba">
+        <sqlFile encoding="utf8" path="sql/01.create_departments_table.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="homework-2-hr-positions" author="Max Dzalba">
+        <sqlFile encoding="utf8" path="sql/02.create_positions_table.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="homework-2-hr-employees" author="Max Dzalba">
+        <sqlFile encoding="utf8" path="sql/03.create_employees_table.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="homework-2-hr-projects" author="Max Dzalba">
+        <sqlFile encoding="utf8" path="sql/04.create_projects_table.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="homework-2-hr-participation" author="Max Dzalba">
+        <sqlFile encoding="utf8" path="sql/05.create_project_participation_table.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+    <changeSet id="homework-2-hr-indexes" author="Max Dzalba">
+        <sqlFile encoding="utf8" path="sql/06.create_indexes.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+</databaseChangeLog>
