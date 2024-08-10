@@ -1,0 +1,32 @@
+EXPLAIN SELECT e.ID, e.FullName, e.Email, pos.Title AS PositionTitle
+FROM Employees e
+INNER JOIN Positions pos ON e.PositionID = pos.ID WHERE e.FullName = 'John Doe';
+
+EXPLAIN SELECT e.ID, e.FullName, e.Email, d.Name AS DepartmentName
+FROM Employees e
+INNER JOIN Departments d ON e.DepartmentID = d.ID;
+
+EXPLAIN SELECT pp.EmployeeID, e.FullName, pp.ProjectID, pp.Role, pp.StartDate, pp.EndDate
+FROM ProjectParticipation pp
+INNER JOIN Employees e ON pp.EmployeeID = e.ID;
+
+EXPLAIN SELECT pp.EmployeeID, pp.ProjectID, p.Name AS ProjectName, pp.Role, pp.StartDate, pp.EndDate
+FROM ProjectParticipation pp
+INNER JOIN Projects p ON pp.ProjectID = p.ID;
+
+EXPLAIN SELECT 
+    pp.EmployeeID,
+    e.FullName AS EmployeeName,
+    e.Email AS EmployeeEmail,
+    pp.ProjectID,
+    p.Name AS ProjectName,
+    p.Description AS ProjectDescription,
+    pp.Role AS EmployeeRoleInProject,
+    pp.StartDate AS ParticipationStartDate,
+    pp.EndDate AS ParticipationEndDate
+FROM 
+    ProjectParticipation pp
+INNER JOIN 
+    Employees e ON pp.EmployeeID = e.ID
+INNER JOIN 
+    Projects p ON pp.ProjectID = p.ID;
